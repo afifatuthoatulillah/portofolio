@@ -37,12 +37,6 @@ nav ul {
   gap: 20px;
 }
 
-nav p {
-  display: flex;
-  list-style: none;
-  gap: 20px;
-}
-
 nav a {
   text-decoration: none;
   color: #334155;
