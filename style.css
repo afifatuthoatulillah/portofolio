@@ -1,0 +1,703 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --ink: #17233b;
+  --muted: #718096;
+  --blue: #4263eb;
+  --blue-dark: #304cc4;
+  --pale: #f4f6fb;
+  --line: #e7eaf2;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--white);
+  color: var(--ink);
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px max(7%, calc((100% - 1120px) / 2));
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid rgba(231, 234, 242, 0.8);
+  backdrop-filter: blur(14px);
+}
+
+.logo {
+  color: var(--ink);
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 800;
+  text-decoration: none;
+  letter-spacing: -0.06em;
+}
+
+.logo span {
+  color: var(--blue);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: #647086;
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
+.hero {
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 82% 55%, rgba(105, 132, 255, 0.16), transparent 34%),
+    linear-gradient(120deg, #f8f9ff 0%, #f5f7ff 55%, #eef2ff 100%);
+}
+
+.hero-content {
+  max-width: 1120px;
+  min-height: 550px;
+  margin: auto;
+  padding: 70px 32px 72px;
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: 65px;
+}
+
+.hero-copy {
+  padding: 10px 0;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 7px 13px;
+  border: 1px solid #dfe5ff;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--blue-dark);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #45b982;
+  box-shadow: 0 0 0 4px rgba(69, 185, 130, 0.12);
+}
+
+.eyebrow {
+  color: var(--blue);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+.hero-copy > .eyebrow {
+  margin-top: 30px;
+}
+
+.hero h1 {
+  margin: 10px 0 16px;
+  color: var(--ink);
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.1rem);
+  font-weight: 800;
+  letter-spacing: -0.065em;
+  line-height: 1.14;
+}
+
+.hero h1 span {
+  color: var(--blue);
+}
+
+.identitas-utama {
+  max-width: 520px;
+  color: #66738a;
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-top: 29px;
+}
+
+.btn,
+.btn-outline {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 9px;
+  padding: 12px 19px;
+  border: 1px solid var(--blue);
+  border-radius: 9px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn {
+  background: var(--blue);
+  color: var(--white);
+  box-shadow: 0 8px 18px rgba(66, 99, 235, 0.18);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: var(--blue-dark);
+  box-shadow: 0 11px 22px rgba(66, 99, 235, 0.24);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--blue);
+}
+
+.btn-outline:hover {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.text-link {
+  color: #5e6b83;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link span {
+  margin-left: 5px;
+  color: var(--blue);
+}
+
+.hero-meta {
+  display: flex;
+  gap: 28px;
+  margin-top: 38px;
+  color: #66738a;
+  font-size: 0.86rem;
+}
+
+.hero-meta strong {
+  margin-right: 5px;
+  color: var(--ink);
+}
+
+.hero-portrait {
+  position: relative;
+  justify-self: center;
+  width: min(100%, 340px);
+  padding: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  background: rgba(255, 255, 255, 0.45);
+  box-shadow: 0 24px 60px rgba(57, 77, 146, 0.13);
+  transform: rotate(2deg);
+}
+
+.portrait-frame {
+  overflow: hidden;
+  aspect-ratio: 4 / 4.5;
+  border-radius: 16px;
+  background: #e1e7f7;
+}
+
+.portrait-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.portrait-note {
+  display: block;
+  padding: 13px 4px 1px;
+  color: #52617b;
+  font-size: 0.83rem;
+  font-weight: 700;
+  text-align: center;
+  transform: rotate(-2deg);
+}
+
+.container {
+  width: min(100% - 48px, 1056px);
+  margin: auto;
+  padding: 76px 0 0;
+  scroll-margin-top: 75px;
+}
+
+.section-heading {
+  margin-bottom: 27px;
+}
+
+.section-heading h2,
+.kontak h2 {
+  margin-top: 5px;
+  color: var(--ink);
+  font-family: 'Manrope', sans-serif;
+  font-size: clamp(1.7rem, 3vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.3;
+}
+
+.section-intro {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.kartu-biodata {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 48px;
+  padding: 12px 28px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--white);
+  box-shadow: 0 10px 35px rgba(28, 44, 80, 0.04);
+}
+
+.baris-data {
+  display: flex;
+  gap: 12px;
+  padding: 13px 0;
+  border-bottom: 1px solid #f0f2f7;
+}
+
+.baris-data:nth-last-child(-n + 2) {
+  border-bottom: 0;
+}
+
+.label {
+  width: 125px;
+  flex-shrink: 0;
+  color: #7b879a;
+  font-size: 0.9rem;
+}
+
+.isi {
+  color: var(--ink);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.item-pendidikan {
+  position: relative;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.item-pendidikan:hover,
+.kartu-skill:hover,
+.kartu-karya:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 35px rgba(28, 44, 80, 0.09);
+}
+
+.tahun {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 4px 10px;
+  border-radius: 30px;
+  background: #eef1ff;
+  color: var(--blue-dark);
+  font-size: 0.77rem;
+  font-weight: 700;
+}
+
+.item-pendidikan h3,
+.kartu-skill h3,
+.karya-info h3 {
+  color: var(--ink);
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.03rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.item-pendidikan p {
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.grid-keahlian {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.kartu-skill {
+  position: relative;
+  padding: 25px;
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  background: var(--white);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-number {
+  display: block;
+  margin-bottom: 7px;
+  color: #a6b1cc;
+  font-family: 'Manrope', sans-serif;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.kartu-skill h3 {
+  margin-bottom: 15px;
+  font-size: 1.15rem;
+}
+
+.daftar-tag {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 17px;
+}
+
+.daftar-tag span {
+  padding: 5px 11px;
+  border: 1px solid #e5e9f7;
+  border-radius: 30px;
+  background: #f7f8fc;
+  color: #57647c;
+  font-size: 0.79rem;
+  font-weight: 600;
+}
+
+.grid-karya {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+.kartu-karya {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  background: var(--white);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.karya-image {
+  position: relative;
+  overflow: hidden;
+  height: 235px;
+  background: var(--pale);
+}
+
+.karya-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.kartu-karya:hover .karya-image img {
+  transform: scale(1.04);
+}
+
+.karya-index {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  padding: 5px 10px;
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.9);
+  color: var(--blue-dark);
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.karya-info {
+  padding: 20px 22px 22px;
+}
+
+.karya-kategori {
+  margin-bottom: 6px;
+  color: var(--blue);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.karya-info > p:not(.karya-kategori) {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.karya-info .daftar-tag {
+  margin-top: 15px;
+}
+
+.grid-sertifikat {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.kartu-sertifikat {
+  display: block;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--white);
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(28, 44, 80, 0.04);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.kartu-sertifikat:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(28, 44, 80, 0.1);
+}
+
+.kartu-sertifikat img {
+  display: block;
+  width: 100%;
+  height: 205px;
+  object-fit: cover;
+  object-position: top center;
+  background: var(--pale);
+}
+
+.kartu-sertifikat > span {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px;
+  color: #59667d;
+  font-size: 0.84rem;
+  font-weight: 700;
+}
+
+.kartu-sertifikat > span span {
+  color: var(--blue);
+}
+
+.kontak {
+  margin-top: 80px;
+  margin-bottom: 76px;
+  padding: 42px 25px;
+  border: 1px solid #e5e9fa;
+  border-radius: 18px;
+  background:
+    radial-gradient(ellipse at 90% 20%, rgba(107, 132, 250, 0.12), transparent 32%),
+    #f7f8ff;
+  text-align: center;
+}
+
+.kontak h2 {
+  margin-top: 5px;
+}
+
+.kontak > p:not(.eyebrow) {
+  margin-top: 6px;
+  color: var(--muted);
+}
+
+.sosmed {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+footer {
+  padding: 21px 20px;
+  background: #17233b;
+  color: #c1c9d8;
+  font-size: 0.84rem;
+  text-align: center;
+}
+
+footer span {
+  color: #8290aa;
+}
+
+@media (max-width: 900px) {
+  nav {
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .hero-content {
+    gap: 35px;
+  }
+
+  .hero-portrait {
+    width: min(100%, 300px);
+  }
+
+  .timeline {
+    grid-template-columns: 1fr;
+  }
+
+  .item-pendidikan {
+    padding: 19px 22px;
+  }
+}
+
+@media (max-width: 680px) {
+  nav {
+    align-items: flex-start;
+    gap: 15px;
+    padding: 14px 22px;
+  }
+
+  .nav-links {
+    justify-content: flex-end;
+    gap: 7px 14px;
+    flex-wrap: wrap;
+  }
+
+  .nav-links a {
+    font-size: 0.76rem;
+  }
+
+  .hero-content {
+    min-height: auto;
+    padding: 54px 25px 58px;
+    grid-template-columns: 1fr;
+    gap: 38px;
+  }
+
+  .hero-copy > .eyebrow {
+    margin-top: 24px;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.45rem, 11vw, 3.4rem);
+  }
+
+  .hero-portrait {
+    width: min(82%, 280px);
+  }
+
+  .hero-meta {
+    gap: 12px 20px;
+    flex-wrap: wrap;
+  }
+
+  .container {
+    width: min(100% - 40px, 520px);
+    padding-top: 60px;
+  }
+
+  .kartu-biodata {
+    grid-template-columns: 1fr;
+    padding: 8px 20px;
+  }
+
+  .baris-data,
+  .baris-data:nth-last-child(-n + 2) {
+    border-bottom: 1px solid #f0f2f7;
+  }
+
+  .baris-data:last-child {
+    border-bottom: 0;
+  }
+
+  .label {
+    width: 115px;
+  }
+
+  .grid-keahlian,
+  .grid-karya {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-sertifikat {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .kartu-sertifikat img {
+    height: 155px;
+  }
+
+  .kontak {
+    margin-top: 60px;
+    margin-bottom: 55px;
+    padding: 35px 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .hero-actions {
+    align-items: flex-start;
+    gap: 16px;
+    flex-direction: column;
+  }
+
+  .grid-sertifikat {
+    grid-template-columns: 1fr;
+  }
+
+  .kartu-sertifikat img {
+    height: 220px;
+  }
+}
